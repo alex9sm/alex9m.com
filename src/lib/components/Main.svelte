@@ -56,11 +56,11 @@
                 </div>
             </div>
         </div>
-
+ 
         <div class="mt-4 md:mx-28 lg:mb-72"
             transition:fade={{ delay: 1200, duration: 1000 }}>
             <button class="bg-sky-200 p-3 rounded-lg text-black font-semibold shadow-xl shadow-indigo-500/20 active:bg-sky-400 cursor-pointer">
-            <a href="/resume3.pdf" download>Download Resume</a>
+            <a href="/SEresume.pdf" download>Download Resume</a>
             </button>
         </div>
 
