@@ -52,7 +52,7 @@
                     <h1 class=" lg:text-2xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] pb-1">business owner</h1>
                     <h1 class=" lg:text-2xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] pb-1">software engineer</h1>
                     <h1 class=" lg:text-2xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] pb-1">cybersecurity enthusiast</h1>
-                    <h1 class=" lg:text-2xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] pb-1">designer</h1>
+                    <h1 class=" lg:text-2xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] pb-1">student</h1>
                 </div>
             </div>
         </div>
