@@ -4,7 +4,7 @@
   import { fade } from 'svelte/transition';
 
   let showToast = false;
-  const email = 'alexcox4132@gmail.com';
+  const email = 'work@alex9m.com';
 
   function copyEmail() {
     navigator.clipboard.writeText(email)
