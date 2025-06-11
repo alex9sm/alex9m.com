@@ -95,7 +95,7 @@
             <h1 class="text-4xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] mb-20">Projects</h1>
             <div class="flex flex-col w-full h-full justify-center items-center ">
                 <a href="https://rapidpass.io/"><h1 class="text-2xl font-bold text-white underline mb-12">Rapidpass</h1></a>
-                <embed src="https://rapidpass.io/" class="w-3/4 h-[700px] rounded-2xl ring-2 ring-indigo-400/20 shadow-2xl shadow-indigo-400/30"/>
+                <embed src="https://rapidpass.io/" class="w-8/9 md:w-3/4 h-[700px] rounded-2xl ring-2 ring-indigo-400/20 shadow-2xl shadow-indigo-400/30"/>
             </div>
         </div>
 

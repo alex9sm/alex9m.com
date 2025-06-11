@@ -20,7 +20,7 @@
   }
 </script>
 
-<header class="sticky top-0 z-50 bg-transparent backdrop-blur-sm [-webkit-backdrop-filter:blur(8px)]">
+<header class="sticky top-0 z-50 bg-transparent backdrop-blur-md [-webkit-backdrop-filter:blur(8px)]">
     <div class="max-w-7xl mx-auto px-12 lg:px-20 md:py-6">
       <div class="flex justify-end items-center py-6 md:py-4">
         
