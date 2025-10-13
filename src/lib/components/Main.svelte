@@ -59,7 +59,7 @@
  
         <div class="mt-4 md:mx-28 lg:mb-72"
             transition:fade={{ delay: 1200, duration: 1000 }}>
-            <button class="bg-sky-200 p-3 rounded-lg text-black font-semibold shadow-xl shadow-indigo-500/20 active:bg-sky-400 cursor-pointer">
+            <button class="bg-sky-200 hover:bg-sky-300 p-3 rounded-lg text-black font-semibold shadow-xl shadow-indigo-500/20 active:bg-sky-400 transition-colors duration-200 cursor-pointer">
             <a href="/SEresume.pdf" download>Download Resume</a>
             </button>
         </div>
@@ -91,20 +91,11 @@
 
         <hr class=" h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent opacity-30 mt-36">
 
-        <div class="flex flex-col justify-center items-center mt-36">
-            <h1 class="text-4xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] mb-20">Projects</h1>
-            <div class="flex flex-col w-full h-full justify-center items-center ">
-                <a href="https://rapidpass.io/"><h1 class="text-2xl font-bold text-white underline mb-12">Rapidpass</h1></a>
-                <embed src="https://rapidpass.io/" class="w-8/9 md:w-3/4 h-[700px] rounded-2xl ring-2 ring-indigo-400/20 shadow-2xl shadow-indigo-400/30"/>
+        <div class="flex flex-col justify-center items-center mt-36 mb-72">
+            <h1 class="text-4xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] mb-20">Writeups</h1>
+            <div class="flex flex-col w-full h-full justify-center items-center">
+                <a href="/tradingbot" class="text-2xl hover:text-sky-200 hover:underline underline-offset-4 transition-all duration-200">Arbitrage Trading Bot Project</a>
             </div>
-        </div>
-
-        <hr class=" h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent opacity-30 mt-36">
-
-        
-        <div class="flex flex-col w-full justify-center mt-96 mb-72" >
-            <h1 class="text-center text-2xl font-bold text-sky-200 [text-shadow:_0_0px_15px_rgb(99_102_241_/_0.5)] mb-8">More to come...</h1>
-            <h1 class="text-center mb-24">Contact me through Linkedin or email!</h1>
         </div>
 
     </div>
