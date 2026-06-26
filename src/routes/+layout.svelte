@@ -1,15 +1,13 @@
 <script lang="ts">
-    import Footer from '$lib/components/Footer.svelte';
-import SideMenu from '$lib/components/SideMenu.svelte';
-	import TopBar from '$lib/components/TopBar.svelte';
-import '../app.css';
-	
+  import Footer from '$lib/components/Footer.svelte';
+  import TopBar from '$lib/components/TopBar.svelte';
+  import '../app.css';
 </script>
 
-<div class="mx-5 md:mx-8 xl:mx-20 ">
-	<TopBar/>
-	<SideMenu/>
-	<slot/>
+<div class="flex flex-col min-h-screen">
+  <TopBar />
+  <main class="flex-1">
+    <slot />
+  </main>
+  <Footer />
 </div>
-<Footer/>
-
