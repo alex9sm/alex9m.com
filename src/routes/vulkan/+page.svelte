@@ -5,12 +5,13 @@
   let visible = false;
   onMount(() => { visible = true; });
 
-  // TODO: populate with real media. Each item can later become an <img>, <video>, or embed.
+  // Images live in static/vulkan/ and are served from the site root (/vulkan/...).
+  // Drop your 4 files in there named 1–4. Change the extension here if they aren't .jpg.
   const gallery = [
-    { label: 'Screenshot / clip 1' },
-    { label: 'Screenshot / clip 2' },
-    { label: 'Screenshot / clip 3' },
-    { label: 'Screenshot / clip 4' },
+    { src: '/vulkan/1.jpg', alt: 'Vulkan renderer screenshot 1' },
+    { src: '/vulkan/2.jpg', alt: 'Vulkan renderer screenshot 2' },
+    { src: '/vulkan/3.jpg', alt: 'Vulkan renderer screenshot 3' },
+    { src: '/vulkan/4.jpg', alt: 'Vulkan renderer screenshot 4' },
   ];
 </script>
 
@@ -35,20 +36,15 @@
       </div>
     </header>
 
-    <!-- Hero media slot -->
-    <div class="glass rounded-2xl aspect-video flex flex-col items-center justify-center text-center gap-3 mb-6">
-      <i class="fa-solid fa-image text-3xl text-zinc-600"></i>
-      <p class="text-sm text-zinc-500">Hero render / demo reel</p>
-      <p class="font-mono text-[0.65rem] text-zinc-600">replace this slot with an image or video</p>
-    </div>
-
     <!-- Gallery grid -->
     <div class="grid grid-cols-2 gap-4 mb-16">
       {#each gallery as item}
-        <div class="glass rounded-xl aspect-video flex flex-col items-center justify-center gap-2 text-center">
-          <i class="fa-solid fa-plus text-xl text-zinc-600"></i>
-          <p class="font-mono text-[0.65rem] text-zinc-600">{item.label}</p>
-        </div>
+        <img
+          src={item.src}
+          alt={item.alt}
+          loading="lazy"
+          class="glass rounded-xl aspect-video w-full object-cover"
+        />
       {/each}
     </div>
 
@@ -56,22 +52,44 @@
     <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-300">
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overview</h2>
-        <p class="text-zinc-600 italic">Coming soon &mdash; a short summary of the renderer and its goals.</p>
+        <p class="text-zinc-600 italic">The goal of this renderer is to make a highly performant, fast compiling, cross-platform game renderer written in C++ and using the VulkanSDK.</p>
       </section>
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Features</h2>
-        <p class="text-zinc-600 italic">Coming soon &mdash; list the rendering features and techniques implemented.</p>
+        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-600 text-zinc-600 italic">
+          <li>Full PBR materials</li>
+          <li>Image based lighting</li>
+          <li>Cubemap reflections</li>
+          <li>glTF model loading</li>
+          <li>FPS style camera</li>
+        </ul>
       </section>
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Architecture</h2>
-        <p class="text-zinc-600 italic">Coming soon &mdash; describe the pipeline, abstractions, and design decisions.</p>
+        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-600 text-zinc-600 italic">
+          <li>Data oriented design for runtime performance</li>
+          <li>Explicit memory management over RAII</li>
+          <li>Namespaces instead of classes for zero runtime overhead</li>
+          <li>Custom core library in place of the std/STL</li>
+          <li>Precompiled headers for heavy includes</li>
+          <li>Dedicated platform layer abstracting the Win32 API, with room for future platforms</li>
+          <li>Renderer decoupled from game and scene specific code for a clean, reusable API</li>
+        </ul>
       </section>
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Challenges &amp; Learnings</h2>
-        <p class="text-zinc-600 italic">Coming soon &mdash; notes on the hard parts and what you took away.</p>
+        <p class="text-zinc-600 italic">The most challenging part came at the very start. Learning the intricacies and naming conventions of the win32 API took some time,
+          but I was able to overcome it by starting small, writing only what I needed and building on it as I went.
+        </p>
+        <p class="text-zinc-600 italic mt-5">Shifting from an OOP mindset to data oriented design was a real adjustment. Instead of modeling everything as objects, I had to
+          start thinking in terms of how data moves through the program, which changed how I approached C++ as a whole.
+        </p>
+        <p class="text-zinc-600 italic mt-5">I also came to appreciate how much being explicit pays off. Managing resources and memory by hand gave me a far clearer picture
+          of what the program is actually doing at runtime, and made performance problems much easier to reason about.
+        </p>
       </section>
     </div>
   </article>

@@ -85,7 +85,7 @@
         <p class="eyebrow pt-2">About</p>
         <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-300">
           <p>
-            I'm a student and engineer who likes building impressive things that make an impact for people. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
+            I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
           </p>
         </div>
       </div>
