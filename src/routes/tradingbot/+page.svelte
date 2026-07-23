@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
+  import ZoomImage from '$lib/components/ZoomImage.svelte';
 
   let visible = false;
   onMount(() => { visible = true; });
@@ -31,24 +32,24 @@
 {#if visible}
   <article class="max-w-3xl mx-auto px-5 md:px-8 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
-    <a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors mb-12">
+    <a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
       <i class="fa-solid fa-arrow-left text-xs"></i>
       Back to home
     </a>
 
     <header class="mb-14">
       <p class="eyebrow mb-4">Writeup &mdash; Automation</p>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
         Arbitrage Trading Bot
       </h1>
       <div class="flex flex-wrap gap-2 mt-6">
         {#each ['Python', 'OpenAI', 'Discord API', 'Brokerage APIs', 'Web scraping'] as tag}
-          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.03] border border-white/10 text-zinc-400">{tag}</span>
+          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-zinc-600">{tag}</span>
         {/each}
       </div>
     </header>
 
-    <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-300">
+    <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-700">
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overview</h2>
@@ -96,6 +97,15 @@
         </p>
       </section>
 
+      <!-- Screenshot -->
+      <section>
+        <ZoomImage
+          src="/tradingbot/1.jpg"
+          alt="Arbitrage trading bot screenshot"
+          class="glass rounded-xl w-full object-cover w-[400px]"
+        />
+      </section>
+
       <!-- Further Reading -->
       <section>
         <hr class="hairline mb-10" />
@@ -113,9 +123,9 @@
                 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
               </span>
               <span class="flex-1">
-                <span class="block text-base text-zinc-100 group-hover:text-white transition-colors">{item.title}</span>
+                <span class="block text-base text-zinc-900 group-hover:text-zinc-900 transition-colors">{item.title}</span>
                 <span class="block font-mono text-[0.65rem] uppercase tracking-wider text-zinc-500 mt-1">{item.source}</span>
-                <span class="block text-sm text-zinc-400 mt-2 leading-relaxed">{item.desc}</span>
+                <span class="block text-sm text-zinc-600 mt-2 leading-relaxed">{item.desc}</span>
               </span>
             </a>
           {/each}

@@ -16,17 +16,17 @@
     </div>
   {/if}
 
-  <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-white transition-colors">
+  <h3 class="text-lg font-semibold text-zinc-900 mb-2 group-hover:text-zinc-900 transition-colors">
     {title}
   </h3>
-  <p class="text-sm leading-relaxed text-zinc-400 flex-1">
+  <p class="text-sm leading-relaxed text-zinc-600 flex-1">
     {description}
   </p>
 
   {#if tags.length}
     <div class="flex flex-wrap gap-2 mt-5">
       {#each tags as tag}
-        <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.03] border border-white/10 text-zinc-400">
+        <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-zinc-600">
           {tag}
         </span>
       {/each}

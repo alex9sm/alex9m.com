@@ -1,6 +1,7 @@
 <script lang="ts">
   import Footer from '$lib/components/Footer.svelte';
   import TopBar from '$lib/components/TopBar.svelte';
+  import Lightbox from '$lib/components/Lightbox.svelte';
   import '../app.css';
 </script>
 
@@ -11,3 +12,5 @@
   </main>
   <Footer />
 </div>
+
+<Lightbox />

@@ -11,7 +11,7 @@
       href: '/tradingbot',
       title: 'Arbitrage Trading Bot',
       description:
-        'Automated pipeline that webscrapes SEC filings and applies NLP to surface reverse split arbitrage opportunities across multiple brokerages.',
+        'This project made me a lot of money while it was active.',
       tags: ['Python', 'OpenAI', 'Discord API', 'Brokerage APIs'],
       status: 'Writeup',
     },
@@ -19,7 +19,7 @@
       href: '/vulkan',
       title: 'Vulkan Renderer',
       description:
-        'A real-time renderer built from the ground up on the VulkanSDK. Exploring low-level GPU programming and modern rendering techniques.',
+        'Real-time renderer built from the ground up on the VulkanSDK.',
       tags: ['C++', 'Vulkan', 'GLSL'],
       status: 'In progress',
     },
@@ -40,20 +40,19 @@
 
     <!-- Hero -->
     <section class="min-h-[78vh] flex flex-col justify-center" transition:fade={{ duration: 800 }}>
-      <p class="eyebrow mb-6" transition:fade={{ delay: 150, duration: 800 }}>Portfolio</p>
 
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-zinc-100" transition:fade={{ delay: 200, duration: 900 }}>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900" transition:fade={{ delay: 200, duration: 900 }}>
         Hello, I'm <span class="accent-glow">Alex</span>.
       </h1>
 
-      <div class="flex items-center gap-2 mt-6 text-lg md:text-2xl text-zinc-400" transition:fade={{ delay: 500, duration: 900 }}>
+      <div class="flex items-center gap-2 mt-6 text-lg md:text-2xl text-zinc-600" transition:fade={{ delay: 500, duration: 900 }}>
         <span>I'm a</span>
         <div class="role-viewport">
-          <div class="role-track font-medium text-zinc-100">
+          <div class="role-track font-medium text-zinc-900">
             <span>student</span>
             <span>business owner</span>
             <span>software engineer</span>
-            <span>cybersecurity enthusiast</span>
+            <span>problem solver</span>
             <span>student</span>
           </div>
         </div>
@@ -69,7 +68,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="text-zinc-500 hover:text-zinc-200 cursor-pointer transition-colors"
+            class="text-zinc-400 hover:text-zinc-900 cursor-pointer transition-colors"
             on:click={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
           >
             <path d="M12 5v14M19 12l-7 7-7-7" />
@@ -83,16 +82,33 @@
       <hr class="hairline mb-20" />
       <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
         <p class="eyebrow pt-2">About</p>
-        <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-300">
+        <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-700">
           <p>
             I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
+          </p>
+          <p>
+            Currently interested in Quake netcode, http3/QUIC, Topology (due to a recent event involving Claude Fable and the Jacobian Conjecture).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-20">
+      <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
+        <p class="eyebrow pt-2">Currently reading</p>
+        <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-700">
+          <p>
+            <i>Operating Systems: Three Easy Pieces</i> - Remzi Arpaci-Dusseau
+          </p>
+          <p>
+            <i>Storm of Steel</i> - Ernst Junger
           </p>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section class="pb-10">
+    <section class="py-10">
       <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
         <p class="eyebrow pt-2">Projects</p>
         <div class="grid sm:grid-cols-2 gap-5">

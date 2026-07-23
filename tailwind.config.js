@@ -5,13 +5,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        mono: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         accent: {
-          DEFAULT: '#a5b4fc',
-          soft: '#c7d2fe',
-          muted: '#818cf8',
+          DEFAULT: '#ef4444',
+          soft: '#dc2626',
+          muted: '#ef4444',
         },
       },
       keyframes: {

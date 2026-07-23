@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
+  import ZoomImage from '$lib/components/ZoomImage.svelte';
 
   let visible = false;
   onMount(() => { visible = true; });
@@ -18,46 +19,45 @@
 {#if visible}
   <article class="max-w-4xl mx-auto px-5 md:px-8 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
-    <a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors mb-12">
+    <a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
       <i class="fa-solid fa-arrow-left text-xs"></i>
       Back to home
     </a>
 
     <header class="mb-12">
       <p class="eyebrow mb-4">Writeup &mdash; Graphics</p>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
         Vulkan Renderer
       </h1>
       <div class="flex flex-wrap gap-2 mt-6">
         {#each ['C++', 'Vulkan', 'GLSL'] as tag}
-          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.03] border border-white/10 text-zinc-400">{tag}</span>
+          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-zinc-600">{tag}</span>
         {/each}
-        <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.03] border border-white/10 text-accent-soft">In progress</span>
+        <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-accent-soft">In progress</span>
       </div>
     </header>
 
     <!-- Gallery grid -->
     <div class="grid grid-cols-2 gap-4 mb-16">
       {#each gallery as item}
-        <img
+        <ZoomImage
           src={item.src}
           alt={item.alt}
-          loading="lazy"
           class="glass rounded-xl aspect-video w-full object-cover"
         />
       {/each}
     </div>
 
     <!-- Text sections (empty stubs to populate) -->
-    <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-300">
+    <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-700">
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overview</h2>
-        <p class="text-zinc-600 italic">The goal of this renderer is to make a highly performant, fast compiling, cross-platform game renderer written in C++ and using the VulkanSDK.</p>
+        <p class="text-zinc-800">The goal of this renderer is to make a highly performant, fast compiling, cross-platform game renderer written in C++ and using the VulkanSDK.</p>
       </section>
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Features</h2>
-        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-600 text-zinc-600 italic">
+        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-800 text-zinc-800">
           <li>Full PBR materials</li>
           <li>Image based lighting</li>
           <li>Cubemap reflections</li>
@@ -68,7 +68,7 @@
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Architecture</h2>
-        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-600 text-zinc-600 italic">
+        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-800 text-zinc-800">
           <li>Data oriented design for runtime performance</li>
           <li>Explicit memory management over RAII</li>
           <li>Namespaces instead of classes for zero runtime overhead</li>
@@ -81,14 +81,14 @@
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Challenges &amp; Learnings</h2>
-        <p class="text-zinc-600 italic">The most challenging part came at the very start. Learning the intricacies and naming conventions of the win32 API took some time,
+        <p class="text-zinc-800 ">The most challenging part came at the very start. Learning the intricacies and naming conventions of the win32 API took some time,
           but I was able to overcome it by starting small, writing only what I needed and building on it as I went.
         </p>
-        <p class="text-zinc-600 italic mt-5">Shifting from an OOP mindset to data oriented design was a real adjustment. Instead of modeling everything as objects, I had to
+        <p class="text-zinc-800 mt-5">Shifting from an OOP mindset to data oriented design was a real adjustment. Instead of modeling everything as objects, I had to
           start thinking in terms of how data moves through the program, which changed how I approached C++ as a whole.
         </p>
-        <p class="text-zinc-600 italic mt-5">I also came to appreciate how much being explicit pays off. Managing resources and memory by hand gave me a far clearer picture
-          of what the program is actually doing at runtime, and made performance problems much easier to reason about.
+        <p class="text-zinc-800 mt-5">I also came to appreciate how much being explicit pays off. Managing resources and memory by hand gave me a far clearer picture
+          of what the program is actually doing at runtime, and also greatly increased my understanding of virtualization and segmentation.
         </p>
       </section>
     </div>
