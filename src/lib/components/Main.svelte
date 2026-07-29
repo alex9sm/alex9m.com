@@ -86,9 +86,6 @@
           <p>
             I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
           </p>
-          <p>
-            Currently interested in Quake netcode, http3/QUIC, Topology (due to a recent event involving Claude Fable and the Jacobian Conjecture).
-          </p>
         </div>
       </div>
     </section>
