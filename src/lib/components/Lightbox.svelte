@@ -2,7 +2,7 @@
   import { fade } from 'svelte/transition';
   import { lightboxImage, closeLightbox } from '$lib/stores/lightbox.js';
 
-  function onKeydown(/** @type {KeyboardEvent} */ e) {
+  function onKeydown(e) {
     if (e.key === 'Escape') closeLightbox();
   }
 

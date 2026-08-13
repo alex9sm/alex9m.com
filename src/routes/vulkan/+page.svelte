@@ -71,7 +71,6 @@
         <ul class="space-y-2 list-disc pl-5 marker:text-zinc-800 text-zinc-800">
           <li>Data oriented design for runtime performance</li>
           <li>Explicit memory management over RAII</li>
-          <li>Namespaces instead of classes for zero runtime overhead</li>
           <li>Custom core library in place of the std/STL</li>
           <li>Precompiled headers for heavy includes</li>
           <li>Dedicated platform layer abstracting the Win32 API, with room for future platforms</li>

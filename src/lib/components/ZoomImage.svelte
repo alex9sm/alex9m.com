@@ -10,7 +10,7 @@
   function open() {
     openLightbox(src, alt);
   }
-  function onKeydown(/** @type {KeyboardEvent} */ e) {
+  function onKeydown(e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       open();

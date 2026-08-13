@@ -22,7 +22,7 @@
   }
 
   $: pathname = $page.url.pathname;
-  const isActive = (/** @type {string} */ href) =>
+  const isActive = (href) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 </script>
 
