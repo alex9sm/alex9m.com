@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
   import { lightboxImage, closeLightbox } from '$lib/stores/lightbox.js';
+  import Icon from '$lib/components/Icon.svelte';
 
   function onKeydown(e) {
     if (e.key === 'Escape') closeLightbox();
@@ -33,11 +34,11 @@
     />
     <button
       type="button"
-      class="fixed top-5 right-6 text-white/70 hover:text-white text-3xl leading-none"
+      class="fixed top-5 right-6 text-white/70 hover:text-white leading-none"
       on:click={closeLightbox}
       aria-label="Close expanded image"
     >
-      <i class="fa-solid fa-xmark"></i>
+      <Icon name="close" size={30} />
     </button>
   </div>
 {/if}

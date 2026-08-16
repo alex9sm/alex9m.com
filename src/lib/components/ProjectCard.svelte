@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Icon from '$lib/components/Icon.svelte';
+
   export let href: string;
   export let title: string;
   export let description: string;
@@ -35,6 +37,6 @@
 
   <div class="flex items-center gap-2 mt-5 text-sm text-zinc-500 group-hover:text-accent-soft transition-colors">
     <span>View writeup</span>
-    <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1"></i>
+    <Icon name="arrow-right" size={14} class="transition-transform duration-200 group-hover:translate-x-1" />
   </div>
 </a>

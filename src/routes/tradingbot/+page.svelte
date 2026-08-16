@@ -2,6 +2,8 @@
   import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
   import ZoomImage from '$lib/components/ZoomImage.svelte';
+  import Icon from '$lib/components/Icon.svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
   let visible = false;
   onMount(() => { visible = true; });
@@ -29,11 +31,13 @@
   ];
 </script>
 
+<Seo type="article" />
+
 {#if visible}
   <article class="max-w-3xl mx-auto px-5 md:px-8 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
     <a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
-      <i class="fa-solid fa-arrow-left text-xs"></i>
+      <Icon name="arrow-left" size={14} />
       Back to home
     </a>
 
@@ -120,7 +124,7 @@
               class="glass glass-hover group rounded-xl p-4 flex items-start gap-4"
             >
               <span class="mt-0.5 text-zinc-500 group-hover:text-accent-soft transition-colors">
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                <Icon name="external-link" size={14} />
               </span>
               <span class="flex-1">
                 <span class="block text-base text-zinc-900 group-hover:text-zinc-900 transition-colors">{item.title}</span>

@@ -1,10 +1,11 @@
 <script>
   import { fade } from 'svelte/transition';
   import { page } from '$app/stores';
+  import Icon from '$lib/components/Icon.svelte';
+  import { EMAIL, SOCIALS } from '$lib/seo';
 
   let showToast = false;
   let menuOpen = false;
-  const email = 'work@alex9m.com';
 
   const links = [
     { href: '/', label: 'Home' },
@@ -13,7 +14,7 @@
   ];
 
   function copyEmail() {
-    navigator.clipboard.writeText(email)
+    navigator.clipboard.writeText(EMAIL)
       .then(() => {
         showToast = true;
         setTimeout(() => { showToast = false; }, 2000);
@@ -48,13 +49,13 @@
           {/each}
 
           <div class="flex items-center gap-5 pl-4 border-l border-black/10">
-            <!-- svelte-ignore a11y_consider_explicit_label -->
-            <a href="https://www.linkedin.com/in/alexander-cox-568b342b3/" target="_blank" rel="noreferrer" class="text-zinc-600 hover:text-zinc-900 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
-            <!-- svelte-ignore a11y_consider_explicit_label -->
-            <a href="https://github.com/alex9sm" target="_blank" rel="noreferrer" class="text-zinc-600 hover:text-zinc-900 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
-            <!-- svelte-ignore a11y_consider_explicit_label -->
+            {#each SOCIALS as social}
+              <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} class="text-zinc-600 hover:text-zinc-900 transition-colors">
+                <Icon name={social.icon} size={18} />
+              </a>
+            {/each}
             <button on:click={copyEmail} class="text-zinc-600 hover:text-zinc-900 transition-colors" aria-label="Copy email">
-              <i class="fa-solid fa-envelope text-lg"></i>
+              <Icon name="mail" size={18} />
             </button>
           </div>
         </nav>
@@ -66,7 +67,7 @@
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
-          <i class="fa-solid {menuOpen ? 'fa-xmark' : 'fa-bars'} text-xl"></i>
+          <Icon name={menuOpen ? 'close' : 'menu'} size={22} />
         </button>
       </div>
     </div>
@@ -86,12 +87,14 @@
           {/each}
         </div>
         <div class="flex items-center gap-6 mt-4 pt-4 border-t border-black/10">
-          <!-- svelte-ignore a11y_consider_explicit_label -->
-          <a href="https://www.linkedin.com/in/alexander-cox-568b342b3/" target="_blank" rel="noreferrer" class="text-zinc-600 hover:text-zinc-900"><i class="fa-brands fa-linkedin text-xl"></i></a>
-          <!-- svelte-ignore a11y_consider_explicit_label -->
-          <a href="https://github.com/alex9sm" target="_blank" rel="noreferrer" class="text-zinc-600 hover:text-zinc-900"><i class="fa-brands fa-github text-xl"></i></a>
-          <!-- svelte-ignore a11y_consider_explicit_label -->
-          <button on:click={copyEmail} class="text-zinc-600 hover:text-zinc-900" aria-label="Copy email"><i class="fa-solid fa-envelope text-xl"></i></button>
+          {#each SOCIALS as social}
+            <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} class="text-zinc-600 hover:text-zinc-900">
+              <Icon name={social.icon} size={20} />
+            </a>
+          {/each}
+          <button on:click={copyEmail} class="text-zinc-600 hover:text-zinc-900" aria-label="Copy email">
+            <Icon name="mail" size={20} />
+          </button>
         </div>
       </nav>
     {/if}

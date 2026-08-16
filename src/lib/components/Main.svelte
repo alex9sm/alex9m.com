@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
+  import Icon from '$lib/components/Icon.svelte';
 
   let visible = false;
   let showArrow = true;
@@ -65,14 +66,12 @@
         >
           <!-- svelte-ignore a11y_click_events_have_key_events -->
           <!-- svelte-ignore a11y_no_static_element_interactions -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          <span
             class="text-zinc-400 hover:text-zinc-900 cursor-pointer transition-colors"
             on:click={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
           >
-            <path d="M12 5v14M19 12l-7 7-7-7" />
-          </svg>
+            <Icon name="arrow-down" size={28} />
+          </span>
         </div>
       {/if}
     </section>
@@ -96,6 +95,9 @@
         <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-700">
           <p>
             <i>Operating Systems: Three Easy Pieces</i> - Remzi Arpaci-Dusseau
+          </p>
+          <p>
+            <i>Using Assembly Language</i> - Allen L. Wyatt
           </p>
           <p>
             <i>Storm of Steel</i> - Ernst Junger

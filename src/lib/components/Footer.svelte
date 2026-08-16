@@ -1,5 +1,6 @@
 <script>
-  const email = 'work@alex9m.com';
+  import Icon from '$lib/components/Icon.svelte';
+  import { EMAIL, SOCIALS } from '$lib/seo';
 </script>
 
 <footer class="mt-32">
@@ -11,12 +12,14 @@
       </div>
 
       <div class="flex items-center gap-6">
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <a href="https://www.linkedin.com/in/alexander-cox-568b342b3/" target="_blank" rel="noreferrer" class="text-zinc-600 hover:text-zinc-900 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <a href="https://github.com/alex9sm" target="_blank" rel="noreferrer" class="text-zinc-600 hover:text-zinc-900 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <a href="mailto:{email}" class="text-zinc-600 hover:text-zinc-900 transition-colors"><i class="fa-solid fa-envelope text-lg"></i></a>
+        {#each SOCIALS as social}
+          <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} class="text-zinc-600 hover:text-zinc-900 transition-colors">
+            <Icon name={social.icon} size={18} />
+          </a>
+        {/each}
+        <a href="mailto:{EMAIL}" aria-label="Email" class="text-zinc-600 hover:text-zinc-900 transition-colors">
+          <Icon name="mail" size={18} />
+        </a>
       </div>
     </div>
   </div>

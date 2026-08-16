@@ -2,6 +2,9 @@
   import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
   import ZoomImage from '$lib/components/ZoomImage.svelte';
+  import Icon from '$lib/components/Icon.svelte';
+  import Seo from '$lib/components/Seo.svelte';
+  import { SITE_URL } from '$lib/seo';
 
   let visible = false;
   onMount(() => { visible = true; });
@@ -12,15 +15,18 @@
     { src: '/vulkan/1.jpg', alt: 'Vulkan renderer screenshot 1' },
     { src: '/vulkan/2.jpg', alt: 'Vulkan renderer screenshot 2' },
     { src: '/vulkan/3.jpg', alt: 'Vulkan renderer screenshot 3' },
-    { src: '/vulkan/4.jpg', alt: 'Vulkan renderer screenshot 4' },
+    { src: '/vulkan/5.jpg', alt: 'Vulkan renderer screenshot 4' },
   ];
 </script>
+
+<!-- A render from the project makes a stronger card here than the generic site image. -->
+<Seo type="article" image="{SITE_URL}/vulkan/1.jpg" imageWidth={1745} imageHeight={951} />
 
 {#if visible}
   <article class="max-w-4xl mx-auto px-5 md:px-8 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
     <a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
-      <i class="fa-solid fa-arrow-left text-xs"></i>
+      <Icon name="arrow-left" size={14} />
       Back to home
     </a>
 
@@ -59,6 +65,7 @@
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Features</h2>
         <ul class="space-y-2 list-disc pl-5 marker:text-zinc-800 text-zinc-800">
           <li>Full PBR materials</li>
+          <li>Cascaded shadow maps</li>
           <li>Image based lighting</li>
           <li>Cubemap reflections</li>
           <li>glTF model loading</li>

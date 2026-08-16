@@ -1,3 +1,9 @@
+/* Self-hosted Inter (variable weight axis). Each @font-face carries a
+   unicode-range, so a browser only downloads the latin subset for this site.
+   Italic is a separate file, fetched only when italic text is on the page. */
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/inter/wght-italic.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,11 +13,11 @@ html {
 }
 
 *, h1, h2, h3, h4, h5, h6, p, a, button, li, span {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .font-mono, .mono {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* Refined scrollbar */
@@ -56,7 +62,7 @@ html {
 
     /* Subtle uppercase label */
     .eyebrow {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.2em;
         font-size: 0.7rem;
