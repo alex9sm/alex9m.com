@@ -30,7 +30,7 @@ export const PAGES: PageMeta[] = [
 		path: '/',
 		title: 'Alex',
 		description:
-			'I build systems software and tools that solve real problems — a Vulkan renderer in C++, an arbitrage trading bot in Python, and whatever comes next.',
+			'I like systems software and reverse engineering',
 		priority: 1.0
 	},
 	{
