@@ -85,6 +85,12 @@
           <p>
             I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
           </p>
+          <p>
+            I discovered my love for technology from reading and writing cheats for the video game CS:GO. From there my interests branched into reverse engineering, C++, and low level systems programming.
+          </p>
+          <p>
+            When I'm not working or learning something new, I practice MMA and enjoy 3D modeling in Blender.
+          </p>
         </div>
       </div>
     </section>
@@ -93,9 +99,6 @@
       <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
         <p class="eyebrow pt-2">Currently reading</p>
         <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-700">
-          <p>
-            <i>Operating Systems: Three Easy Pieces</i> - Remzi Arpaci-Dusseau
-          </p>
           <p>
             <i>Using Assembly Language</i> - Allen L. Wyatt
           </p>
