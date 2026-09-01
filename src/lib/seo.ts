@@ -34,6 +34,13 @@ export const PAGES: PageMeta[] = [
 		priority: 1.0
 	},
 	{
+		path: '/stats-server',
+		title: 'Stats Server',
+		description:
+			'A C++ monitoring daemon for Proxmox nodes: 24 system metrics read from /proc every five seconds, held in a 30-day in-memory ring buffer and served as JSON to Grafana.',
+		priority: 0.8
+	},
+	{
 		path: '/tradingbot',
 		title: 'Arbitrage Trading Bot',
 		description:

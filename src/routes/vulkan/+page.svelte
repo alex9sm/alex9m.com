@@ -31,7 +31,7 @@
     </a>
 
     <header class="mb-12">
-      <p class="eyebrow mb-4">Writeup &mdash; Graphics</p>
+      <p class="eyebrow mb-4">Winter/2025 - Now</p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
         Vulkan Renderer
       </h1>
@@ -90,11 +90,8 @@
         <p class="text-zinc-800 ">The most challenging part came at the very start. Learning the intricacies and naming conventions of the win32 API took some time,
           but I was able to overcome it by starting small, writing only what I needed and building on it as I went.
         </p>
-        <p class="text-zinc-800 mt-5">Shifting from an OOP mindset to data oriented design was a real adjustment. Instead of modeling everything as objects, I had to
+        <p class="text-zinc-800 mt-5">Shifting from an OOP mindset to data oriented design and cache first mindset was a real learning curve. Instead of modeling everything as objects, I had to
           start thinking in terms of how data moves through the program, which changed how I approached C++ as a whole.
-        </p>
-        <p class="text-zinc-800 mt-5">I also came to appreciate how much being explicit pays off. Managing resources and memory by hand gave me a far clearer picture
-          of what the program is actually doing at runtime, and also greatly increased my understanding of virtualization and segmentation.
         </p>
       </section>
     </div>

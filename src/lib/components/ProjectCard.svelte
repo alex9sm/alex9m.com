@@ -6,15 +6,34 @@
   export let description: string;
   export let tags: string[] = [];
   export let status: string = '';
+  export let repo: string = '';
 </script>
 
-<a
-  {href}
+<!-- The card is a <div> rather than an <a> so the repo link can live inside it;
+     an anchor stretched over the card carries the click for everything else. -->
+<div
   class="glass glass-hover group relative flex flex-col rounded-2xl p-6 h-full overflow-hidden"
 >
-  {#if status}
-    <div class="flex justify-end mb-4">
-      <span class="eyebrow !text-[0.6rem] text-zinc-500">{status}</span>
+  <a {href} class="absolute inset-0 z-0" aria-label={title}></a>
+
+  {#if status || repo}
+    <div class="flex items-center justify-between mb-4">
+      {#if repo}
+        <a
+          href={repo}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="{title} on GitHub"
+          class="relative z-10 -m-1 p-1 text-zinc-500 hover:text-zinc-900 transition-colors"
+        >
+          <Icon name="github" size={15} />
+        </a>
+      {:else}
+        <span></span>
+      {/if}
+      {#if status}
+        <span class="eyebrow !text-[0.6rem] text-zinc-500">{status}</span>
+      {/if}
     </div>
   {/if}
 
@@ -39,4 +58,4 @@
     <span>View writeup</span>
     <Icon name="arrow-right" size={14} class="transition-transform duration-200 group-hover:translate-x-1" />
   </div>
-</a>
+</div>

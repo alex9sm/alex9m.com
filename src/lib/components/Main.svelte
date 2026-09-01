@@ -1,33 +1,24 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { fade } from 'svelte/transition';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
   import Icon from '$lib/components/Icon.svelte';
+  import { PROJECTS } from '$lib/projects';
 
   let visible = false;
   let showArrow = true;
 
-  const projects = [
-    {
-      href: '/tradingbot',
-      title: 'Arbitrage Trading Bot',
-      description:
-        'This project made me a lot of money while it was active.',
-      tags: ['Python', 'OpenAI', 'Discord API', 'Brokerage APIs'],
-      status: 'Writeup',
-    },
-    {
-      href: '/vulkan',
-      title: 'Vulkan Renderer',
-      description:
-        'Real-time renderer built from the ground up on the VulkanSDK.',
-      tags: ['C++', 'Vulkan', 'GLSL'],
-      status: 'In progress',
-    },
-  ];
-
   onMount(() => {
     visible = true;
+
+    // The page body only mounts once `visible` flips, so a browser arriving on
+    // /#projects has nothing to scroll to yet and gives up. Re-run the jump
+    // ourselves after the section is in the DOM.
+    tick().then(() => {
+      if (location.hash !== '#projects') return;
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
     const handleScroll = () => {
       showArrow = window.scrollY === 0;
     };
@@ -100,7 +91,7 @@
         <p class="eyebrow pt-2">Currently reading</p>
         <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-700">
           <p>
-            <i>Using Assembly Language</i> - Allen L. Wyatt
+            <i>Reverse-Engineering</i> - mytechnotalent
           </p>
           <p>
             <i>Storm of Steel</i> - Ernst Junger
@@ -110,11 +101,11 @@
     </section>
 
     <!-- Projects -->
-    <section class="py-10">
+    <section id="projects" class="py-10 scroll-mt-24">
       <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
         <p class="eyebrow pt-2">Projects</p>
         <div class="grid sm:grid-cols-2 gap-5">
-          {#each projects as project}
+          {#each PROJECTS as project}
             <ProjectCard {...project} />
           {/each}
         </div>

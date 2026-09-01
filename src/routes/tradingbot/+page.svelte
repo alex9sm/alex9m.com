@@ -42,7 +42,7 @@
     </a>
 
     <header class="mb-14">
-      <p class="eyebrow mb-4">Writeup &mdash; Automation</p>
+      <p class="eyebrow mb-4">Summer/2024</p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
         Arbitrage Trading Bot
       </h1>

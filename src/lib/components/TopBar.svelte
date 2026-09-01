@@ -3,14 +3,16 @@
   import { page } from '$app/stores';
   import Icon from '$lib/components/Icon.svelte';
   import { EMAIL, SOCIALS } from '$lib/seo';
+  import { PROJECTS } from '$lib/projects';
 
   let showToast = false;
   let menuOpen = false;
 
+  // Individual writeups are reachable from the Projects section rather than the
+  // bar, so this stays two entries wide no matter how many projects get added.
   const links = [
     { href: '/', label: 'Home' },
-    { href: '/tradingbot', label: 'Trading Bot' },
-    { href: '/vulkan', label: 'Vulkan Renderer' },
+    { href: '/#projects', label: 'Projects' },
   ];
 
   function copyEmail() {
@@ -23,8 +25,14 @@
   }
 
   $: pathname = $page.url.pathname;
-  const isActive = (href) =>
-    href === '/' ? pathname === '/' : pathname.startsWith(href);
+
+  // "Projects" also lights up while a writeup is open, since those pages are
+  // what the section links to.
+  const isActive = (href, path) => {
+    if (href === '/') return path === '/';
+    if (href === '/#projects') return PROJECTS.some((p) => path.startsWith(p.href));
+    return path.startsWith(href);
+  };
 </script>
 
 <header class="sticky top-0 z-50">
@@ -42,7 +50,7 @@
           {#each links as link}
             <a
               href={link.href}
-              class="text-sm transition-colors duration-200 {isActive(link.href) ? 'text-zinc-900' : 'text-zinc-600 hover:text-zinc-900'}"
+              class="text-sm transition-colors duration-200 {isActive(link.href, pathname) ? 'text-zinc-900' : 'text-zinc-600 hover:text-zinc-900'}"
             >
               {link.label}
             </a>
@@ -80,7 +88,7 @@
             <a
               href={link.href}
               on:click={() => (menuOpen = false)}
-              class="py-2 text-base transition-colors {isActive(link.href) ? 'text-zinc-900' : 'text-zinc-600 hover:text-zinc-900'}"
+              class="py-2 text-base transition-colors {isActive(link.href, pathname) ? 'text-zinc-900' : 'text-zinc-600 hover:text-zinc-900'}"
             >
               {link.label}
             </a>
