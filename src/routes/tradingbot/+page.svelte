@@ -106,7 +106,7 @@
         <ZoomImage
           src="/tradingbot/1.jpg"
           alt="Arbitrage trading bot screenshot"
-          class="glass rounded-xl w-full object-cover w-[400px]"
+          class="glass rounded-xl w-full object-cover"
         />
       </section>
 

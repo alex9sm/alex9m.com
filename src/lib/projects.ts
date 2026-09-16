@@ -34,5 +34,13 @@ export const PROJECTS: Project[] = [
 		description: 'Real-time renderer built from the ground up on the VulkanSDK.',
 		tags: ['C++', 'Vulkan', 'GLSL'],
 		status: 'In progress'
+	},
+	{
+		href: '/cs2-esp',
+		title: 'CS2 External ESP',
+		description: 'An old CS:GO cheat I wrote when I was 14, updated for CS2',
+		tags: ['C++', 'Windows API', 'Reverse Engineering', 'ImGui'],
+		status: 'Writeup',
+		repo: 'https://github.com/alex9sm/cs2-external'
 	}
 ];

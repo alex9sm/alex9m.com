@@ -37,7 +37,7 @@ export const PAGES: PageMeta[] = [
 		path: '/stats-server',
 		title: 'Stats Server',
 		description:
-			'A C++ monitoring daemon for Proxmox nodes: 24 system metrics read from /proc every five seconds, held in a 30-day in-memory ring buffer and served as JSON to Grafana.',
+			'A C++ monitoring daemon for Proxmox nodes: 24 system metrics read from /proc every five seconds and served as JSON to Grafana.',
 		priority: 0.8
 	},
 	{
@@ -52,6 +52,13 @@ export const PAGES: PageMeta[] = [
 		title: 'Vulkan Renderer',
 		description:
 			'A real-time renderer built from scratch on the Vulkan SDK in C++: PBR materials, cascaded shadow maps, image-based lighting, and a data-oriented architecture.',
+		priority: 0.8
+	},
+	{
+		path: '/cs2-esp',
+		title: 'CS2 External ESP',
+		description:
+			'CS2 external ESP I wrote when I was 14, updated for CS2',
 		priority: 0.8
 	}
 ];

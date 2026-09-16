@@ -42,9 +42,9 @@
         <div class="role-viewport">
           <div class="role-track font-medium text-zinc-900">
             <span>student</span>
-            <span>business owner</span>
+            <span>reverse engineer</span>
             <span>software engineer</span>
-            <span>problem solver</span>
+            <span>business owner</span>
             <span>student</span>
           </div>
         </div>
@@ -77,11 +77,10 @@
             I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
           </p>
           <p>
-            I discovered my love for technology from reading and writing cheats for the video game CS:GO. From there my interests branched into reverse engineering, C++, and low level systems programming.
+            I discovered my love for technology growing up with game modding and hacking, from jailbreaking a PS3 to contributing to open source projects for game decompiling. From there my interests branched into reverse engineering, cybersecurity, and low level systems programming.
           </p>
           <p>
-            When I'm not working or learning something new, I practice MMA and enjoy 3D modeling in Blender.
-          </p>
+            When I'm not working or learning something new related to my field, I enjoy boxing, reading, and writing short stories.
         </div>
       </div>
     </section>
