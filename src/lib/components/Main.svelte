@@ -81,6 +81,7 @@
           </p>
           <p>
             When I'm not working or learning something new related to my field, I enjoy boxing, reading, and writing short stories.
+          </p>
         </div>
       </div>
     </section>
