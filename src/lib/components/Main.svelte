@@ -43,7 +43,7 @@
           <div class="role-track font-medium text-zinc-900">
             <span>student</span>
             <span>reverse engineer</span>
-            <span>software engineer</span>
+            <span>software developer</span>
             <span>business owner</span>
             <span>student</span>
           </div>

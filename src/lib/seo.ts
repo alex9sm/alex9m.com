@@ -13,7 +13,6 @@ export const EMAIL = 'work@alex9m.com';
 
 /** Shared by the TopBar and Footer so the two link sets can't drift apart. */
 export const SOCIALS = [
-	{ href: 'https://www.linkedin.com/in/alexanderbcox/', icon: 'linkedin', label: 'LinkedIn' },
 	{ href: 'https://github.com/alex9sm', icon: 'github', label: 'GitHub' }
 ] as const;
 
@@ -58,7 +57,7 @@ export const PAGES: PageMeta[] = [
 		path: '/cs2-esp',
 		title: 'CS2 External ESP',
 		description:
-			'CS2 external ESP I wrote when I was 14, updated for CS2',
+			'CS2 external ESP',
 		priority: 0.8
 	}
 ];

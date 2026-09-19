@@ -57,7 +57,7 @@
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overview</h2>
         <p>
           Looking through some old folders on my computer I found an old cheat I wrote when I was 14 for the game
-          Counter-Strike: Global Offensive. I rewrote most of it and made it work for
+          Counter-Strike: Global Offensive. I rewrote most of it, added new features, and made it work for
           Counter Strike 2.
         </p>
       </section>
@@ -75,13 +75,17 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Reading Game Memory</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Anticheat Bypass</h2>
         <p class="mb-6">
-          Counter Strike uses VAC (Valve Anti Cheat) and it's pretty well known for being pretty useless. 
+          Counter Strike uses VAC (Valve Anti Cheat) and it's well known for being pretty useless. 
           VAC is a usermode anticheat, meaning it doesn't have very high privileges and can't monitor in depth
-          what programs are interacting with the game. We can take advantage of this by making what's called an
-          external cheat, a cheat that doesn't inject any code into the game and instead simply opens a handle
-          to it using windows system calls. From there it's just a matter of knowing what memory to read or alter.
+          what programs are interacting with the game. That doesn't mean we can simply open a handle to access the game's memory, as VAC 
+          can still enumerate these and flag suspicious processes. In my cheat I use a technique known as dll or handle hijacking. I query ntdll.dll, a system dll 
+          that has a handle open to CS2, and enumerate it's open handles to see if any process IDs match. I then copy 
+          it in to my own program, meaning from VAC's end it appears as though there is no external process and all calls are being made from ntdll.
+          Addtionally, since it would be trivial for VAC to enumerate topmost window overlays, I decided to find Discord's
+          in-game overlay and hijack its handle to further hide from possible VAC protections.
+           From there it's just a matter of knowing what memory to read or alter.
 
         </p>
       </section>
@@ -92,25 +96,24 @@
           CS2 regularily updates the offsets for memory addresses of game objects. Luckily these are tracked 
           by dumps online, which we can pull from to get always updated offsets. Using these offsets we can 
           find the memory addresses of values we want to read, like health, team, world position, etc. From 
-          there we can manipulate the data however we wan't and draw it to the screen.
+          there we can manipulate the data however we want and draw it to the screen.
         </p>
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">The Cheat</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overlay</h2>
         <p>
           The overlay is Imgui, which renders a transparent click-through window on top of the game and draws boxes
           using the players' feet and head positions for the box bounds. I also ensured the cheat batch reads memory
           at a set intervals to prevent the anticheat from potentially detecting a suspiciously high amount of reads every single frame
-          (although I'm fairly sure VAC doesn't even track this) reducing my trust factor. Still, I'd stay away 
-          from using this in an online match, because of the moral implications...
+          (although I'm fairly sure VAC doesn't track this).
         </p>
       </section>
 
       <section>
         <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">What I Learned</h2>
         <p>
-          The code I wrote when I was 14 actually isn't that bad. However, it's still a very barebones cheat and I may 
+          The old code I wrote back then actually isn't that bad. However, it's still a very barebones cheat and I may 
           expand on it in the future.
         </p>
       </section>

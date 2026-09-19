@@ -56,7 +56,7 @@
             </a>
           {/each}
 
-          <div class="flex items-center gap-5 pl-4 border-l border-black/10">
+          <div class="flex items-center gap-5 pl-4 border-l border-black/10 pl-6">
             {#each SOCIALS as social}
               <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} class="text-zinc-600 hover:text-zinc-900 transition-colors">
                 <Icon name={social.icon} size={18} />

@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
 		title: 'Vulkan Renderer',
 		description: 'Real-time renderer built from the ground up on the VulkanSDK.',
 		tags: ['C++', 'Vulkan', 'GLSL'],
-		status: 'In progress'
+		status: 'Writeup'
 	},
 	{
 		href: '/cs2-esp',
