@@ -94,7 +94,7 @@
             <i>Reverse-Engineering</i> - mytechnotalent
           </p>
           <p>
-            <i>Storm of Steel</i> - Ernst Junger
+            <i>The Theory of Moral Sentiments</i> - Adam Smith
           </p>
         </div>
       </div>

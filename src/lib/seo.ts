@@ -36,28 +36,28 @@ export const PAGES: PageMeta[] = [
 		path: '/stats-server',
 		title: 'Stats Server',
 		description:
-			'A C++ monitoring daemon for Proxmox nodes: 24 system metrics read from /proc every five seconds and served as JSON to Grafana.',
+			'A C++ monitoring daemon for Proxmox nodes.',
 		priority: 0.8
 	},
 	{
 		path: '/tradingbot',
 		title: 'Arbitrage Trading Bot',
 		description:
-			'A Python arbitrage trading bot wired into brokerage APIs, OpenAI, and Discord. How it found opportunities and placed trades',
+			'A reverse split arbitrage trading bot.',
 		priority: 0.8
 	},
 	{
 		path: '/vulkan',
 		title: 'Vulkan Renderer',
 		description:
-			'A real-time renderer built from scratch on the Vulkan SDK in C++: PBR materials, cascaded shadow maps, image-based lighting, and a data-oriented architecture.',
+			'A real-time renderer built from scratch on the Vulkan SDK in C++.',
 		priority: 0.8
 	},
 	{
 		path: '/cs2-esp',
-		title: 'CS2 External ESP',
+		title: 'CS2 Kernel Driver ESP',
 		description:
-			'CS2 external ESP',
+			'CS2 kernel driver ESP',
 		priority: 0.8
 	}
 ];

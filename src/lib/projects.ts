@@ -37,10 +37,10 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		href: '/cs2-esp',
-		title: 'CS2 External ESP',
-		description: 'An old CS:GO cheat I wrote when I was 14, updated for CS2',
+		title: 'CS2 Kernel Driver',
+		description: 'A CS2 kernel driver cheat built off of an external esp I made when I was 14',
 		tags: ['C++', 'Windows API', 'Reverse Engineering', 'ImGui'],
 		status: 'Writeup',
-		repo: 'https://github.com/alex9sm/cs2-external'
+		repo: 'https://github.com/alex9sm/kd-external'
 	}
 ];

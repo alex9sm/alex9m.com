@@ -9,6 +9,9 @@
     <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex flex-col items-center sm:items-start gap-1">
         <span class="font-mono text-sm text-zinc-900">alex9m.com</span>
+        <p class="text-xs text-zinc-500">
+          This website is self hosted in my closet.
+        </p>
       </div>
 
       <div class="flex items-center gap-6">
