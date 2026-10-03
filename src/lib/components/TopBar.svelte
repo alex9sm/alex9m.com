@@ -37,7 +37,7 @@
 
 <header class="sticky top-0 z-50">
   <div class="glass">
-    <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="max-w-3xl mx-auto px-6 md:px-12">
       <div class="flex items-center justify-between h-16">
 
         <!-- Brand -->
@@ -82,7 +82,7 @@
 
     <!-- Mobile menu -->
     {#if menuOpen}
-      <nav class="md:hidden border-t border-black/10 px-5 py-4" transition:fade={{ duration: 150 }}>
+      <nav class="md:hidden border-t border-black/10 px-6 py-4" transition:fade={{ duration: 150 }}>
         <div class="flex flex-col gap-1">
           {#each links as link}
             <a

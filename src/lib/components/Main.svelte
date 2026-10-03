@@ -2,11 +2,9 @@
   import { onMount, tick } from 'svelte';
   import { fade } from 'svelte/transition';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
-  import Icon from '$lib/components/Icon.svelte';
   import { PROJECTS } from '$lib/projects';
 
   let visible = false;
-  let showArrow = true;
 
   onMount(() => {
     visible = true;
@@ -18,26 +16,20 @@
       if (location.hash !== '#projects') return;
       document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
     });
-
-    const handleScroll = () => {
-      showArrow = window.scrollY === 0;
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   });
 </script>
 
 {#if visible}
-  <div class="max-w-6xl mx-auto px-5 md:px-8">
+  <div class="max-w-3xl mx-auto px-6 md:px-12">
 
     <!-- Hero -->
-    <section class="min-h-[78vh] flex flex-col justify-center" transition:fade={{ duration: 800 }}>
+    <section class="pt-16 md:pt-24 pb-12 md:pb-16" transition:fade={{ duration: 800 }}>
 
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900" transition:fade={{ delay: 200, duration: 900 }}>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900" transition:fade={{ delay: 200, duration: 900 }}>
         Hello, I'm <span class="accent-glow">Alex</span>.
       </h1>
 
-      <div class="flex items-center gap-2 mt-6 text-lg md:text-2xl text-zinc-600" transition:fade={{ delay: 500, duration: 900 }}>
+      <div class="flex items-center gap-2 mt-5 text-lg md:text-2xl text-zinc-600" transition:fade={{ delay: 500, duration: 900 }}>
         <span>I'm a</span>
         <div class="role-viewport">
           <div class="role-track font-medium text-zinc-900">
@@ -49,66 +41,43 @@
           </div>
         </div>
       </div>
-
-      {#if showArrow}
-        <div
-          class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-          transition:fade={{ duration: 200 }}
-        >
-          <!-- svelte-ignore a11y_click_events_have_key_events -->
-          <!-- svelte-ignore a11y_no_static_element_interactions -->
-          <span
-            class="text-zinc-400 hover:text-zinc-900 cursor-pointer transition-colors"
-            on:click={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-          >
-            <Icon name="arrow-down" size={28} />
-          </span>
-        </div>
-      {/if}
     </section>
+
+    <hr class="hairline" />
 
     <!-- About -->
-    <section class="py-20 md:py-28">
-      <hr class="hairline mb-20" />
-      <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
-        <p class="eyebrow pt-2">About</p>
-        <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-700">
-          <p>
-            I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
-          </p>
-          <p>
-            I discovered my love for technology growing up with game modding and hacking, from jailbreaking a PS3 to contributing to open source projects for game decompiling. From there my interests branched into reverse engineering, cybersecurity, and low level systems programming.
-          </p>
-          <p>
-            When I'm not working or learning something new related to my field, I enjoy boxing, reading, and writing short stories.
-          </p>
-        </div>
+    <section class="py-12 md:py-14">
+      <h2 class="eyebrow mb-6">About</h2>
+      <div class="space-y-5 text-lg leading-relaxed text-zinc-700">
+        <p>
+          I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
+        </p>
+        <p>
+          I discovered my love for technology growing up with game modding and hacking, from jailbreaking my PS3 to contributing to 
+          open source projects for game decompiling. From there my interests branched into reverse engineering, cybersecurity, and 
+          low level systems programming. My current interests include learning the Windows kernel and CUDA.
+        </p>
+        <p>
+          When I'm not working or self teaching something new, I enjoy boxing, reading, and writing short stories.
+        </p>
       </div>
     </section>
 
-    <section class="pb-20">
-      <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
-        <p class="eyebrow pt-2">Currently reading</p>
-        <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-zinc-700">
-          <p>
-            <i>Reverse-Engineering</i> - mytechnotalent
-          </p>
-          <p>
-            <i>The Theory of Moral Sentiments</i> - Adam Smith
-          </p>
-        </div>
-      </div>
+    <section class="pb-12 md:pb-14">
+      <h2 class="eyebrow mb-6">Currently reading</h2>
+      <ul class="space-y-3 text-lg leading-relaxed text-zinc-700">
+        <li><i>Reverse-Engineering</i> - mytechnotalent</li>
+        <li><i>The Theory of Moral Sentiments</i> - Adam Smith</li>
+      </ul>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="py-10 scroll-mt-24">
-      <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
-        <p class="eyebrow pt-2">Projects</p>
-        <div class="grid sm:grid-cols-2 gap-5">
-          {#each PROJECTS as project}
-            <ProjectCard {...project} />
-          {/each}
-        </div>
+    <section id="projects" class="pb-4 scroll-mt-24">
+      <h2 class="eyebrow mb-6">Projects</h2>
+      <div class="flex flex-col gap-5">
+        {#each PROJECTS as project}
+          <ProjectCard {...project} />
+        {/each}
       </div>
     </section>
 

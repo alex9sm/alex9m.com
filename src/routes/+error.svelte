@@ -23,7 +23,7 @@
 <Seo title="{status} — {heading}" description={blurb} noindex />
 
 {#if visible}
-  <div class="max-w-3xl mx-auto px-5 md:px-8 min-h-[70vh] flex flex-col justify-center py-20" transition:fade={{ duration: 500 }}>
+  <div class="max-w-3xl mx-auto px-6 md:px-12 min-h-[70vh] flex flex-col justify-center py-20" transition:fade={{ duration: 500 }}>
 
     <p class="eyebrow mb-4">Error {status}</p>
 

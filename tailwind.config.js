@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+        mono: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
       },
       colors: {
         accent: {

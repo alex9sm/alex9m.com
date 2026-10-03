@@ -26,7 +26,7 @@
 <Seo type="article" image="{SITE_URL}/stats-server/1.jpg" imageWidth={1519} imageHeight={838} />
 
 {#if visible}
-  <article class="max-w-3xl mx-auto px-5 md:px-8 py-16 md:py-24" transition:fade={{ duration: 500 }}>
+  <article class="max-w-3xl mx-auto px-6 md:px-12 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
     <a href="/#projects" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
       <Icon name="arrow-left" size={14} />

@@ -1,16 +1,23 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
   import { EMAIL, SOCIALS } from '$lib/seo';
+  import { openLightbox } from '$lib/stores/lightbox.js';
 </script>
 
-<footer class="mt-32">
+<footer class="mt-20">
   <hr class="hairline" />
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 py-10">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex flex-col items-center sm:items-start gap-1">
         <span class="font-mono text-sm text-zinc-900">alex9m.com</span>
         <p class="text-xs text-zinc-500">
-          This website is self hosted in my closet.
+          <a
+            href="/img.jpg"
+            on:click|preventDefault={() => openLightbox('/img.jpg', '')}
+            class=" cursor-pointer decoration-dotted underline-offset-2 hover:text-zinc-900 transition-colors"
+          >
+            This website is self hosted in my closet.
+          </a>
         </p>
       </div>
 
