@@ -1,7 +1,17 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
+  import { page } from '$app/stores';
   import { EMAIL, SOCIALS } from '$lib/seo';
-  import { openLightbox } from '$lib/stores/lightbox.js';
+
+  // Loaded in +layout.server.ts. Any value can be null if its source is down.
+  $: stats = $page.data.stats ?? {};
+
+  /** @param {number} s */
+  const days = (s) => (s >= 86400 ? `${Math.floor(s / 86400)}d` : `${Math.floor(s / 3600)}h`);
+  /** @param {number | null | undefined} v @param {(n: number) => string} fmt */
+  const show = (v, fmt) => (v == null ? '—' : fmt(v));
+  /** @param {number} n */
+  const count = (n) => n.toLocaleString('en-US');
 </script>
 
 <footer class="mt-20">
@@ -10,14 +20,10 @@
     <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex flex-col items-center sm:items-start gap-1">
         <span class="font-mono text-sm text-zinc-900">alex9m.com</span>
-        <p class="text-xs text-zinc-500">
-          <a
-            href="/img.jpg"
-            on:click|preventDefault={() => openLightbox('/img.jpg', '')}
-            class=" cursor-pointer decoration-dotted underline-offset-2 hover:text-zinc-900 transition-colors"
-          >
-            This website is self hosted in my closet.
-          </a>
+        <p class="text-xs text-zinc-500 text-center sm:text-left">
+          uptime <span class="text-green-600">{show(stats.uptime, days)}</span>
+          / 30d visitors <span class="text-green-600">{show(stats.visitors, count)}</span>
+          / 30d requests <span class="text-green-600">{show(stats.requests, count)}</span>
         </p>
       </div>
 
