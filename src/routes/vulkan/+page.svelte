@@ -25,21 +25,21 @@
 {#if visible}
   <article class="max-w-3xl mx-auto px-6 md:px-12 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
-    <a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
+    <a href="/" class="inline-flex items-center gap-2 text-sm text-stone-300 hover:text-stone-50 transition-colors mb-12">
       <Icon name="arrow-left" size={14} />
       Back to home
     </a>
 
     <header class="mb-12">
       <p class="eyebrow mb-4">Winter/2025 - Now</p>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-stone-50">
         Vulkan Renderer
       </h1>
       <div class="flex flex-wrap gap-2 mt-6">
         {#each ['C++', 'Vulkan', 'GLSL'] as tag}
-          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-zinc-600">{tag}</span>
+          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.05] border border-white/10 text-stone-300">{tag}</span>
         {/each}
-        <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-accent-soft">In progress</span>
+        <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.05] border border-white/10 text-accent-soft">In progress</span>
       </div>
     </header>
 
@@ -55,15 +55,15 @@
     </div>
 
     <!-- Text sections (empty stubs to populate) -->
-    <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-700">
+    <div class="space-y-14 text-base leading-snug text-stone-200">
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overview</h2>
-        <p class="text-zinc-800">The goal of this renderer is to make a highly performant, fast compiling, cross-platform game renderer written in C++ and using the VulkanSDK.</p>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Overview</h2>
+        <p class="text-stone-100">The goal of this renderer is to make a highly performant, fast compiling, cross-platform game renderer written in C++ and using the VulkanSDK.</p>
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Features</h2>
-        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-800 text-zinc-800">
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Features</h2>
+        <ul class="space-y-2 list-disc pl-5 marker:text-stone-100 text-stone-100">
           <li>Full PBR materials</li>
           <li>Cascaded shadow maps</li>
           <li>Image based lighting</li>
@@ -74,8 +74,8 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Architecture</h2>
-        <ul class="space-y-2 list-disc pl-5 marker:text-zinc-800 text-zinc-800">
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Architecture</h2>
+        <ul class="space-y-2 list-disc pl-5 marker:text-stone-100 text-stone-100">
           <li>Data oriented design for runtime performance</li>
           <li>Explicit memory management over RAII</li>
           <li>Custom core library in place of the std/STL</li>
@@ -86,11 +86,11 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Challenges &amp; Learnings</h2>
-        <p class="text-zinc-800 ">The most challenging part came at the very start. Learning the intricacies and naming conventions of the win32 API took some time,
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Challenges &amp; Learnings</h2>
+        <p class="text-stone-100 ">The most challenging part came at the very start. Learning the intricacies and naming conventions of the win32 API took some time,
           but I was able to overcome it by starting small, writing only what I needed and building on it as I went.
         </p>
-        <p class="text-zinc-800 mt-5">Shifting from an OOP mindset to data oriented design and cache first mindset was a real learning curve. Instead of modeling everything as objects, I had to
+        <p class="text-stone-100 mt-5">Shifting from an OOP mindset to data oriented design and cache first mindset was a real learning curve. Instead of modeling everything as objects, I had to
           start thinking in terms of how data moves through the program, which changed how I approached C++ as a whole.
         </p>
       </section>

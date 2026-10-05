@@ -20,19 +20,19 @@
 {#if visible}
   <article class="max-w-3xl mx-auto px-6 md:px-12 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
-    <a href="/#projects" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
+    <a href="/#projects" class="inline-flex items-center gap-2 text-sm text-stone-300 hover:text-stone-50 transition-colors mb-12">
       <Icon name="arrow-left" size={14} />
       Back to projects
     </a>
 
     <header class="mb-14">
       <p class="eyebrow mb-4">September/2026</p>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-stone-50">
         CS2 Kernel Driver Cheat
       </h1>
       <div class="flex flex-wrap gap-2 mt-6">
         {#each ['C++', 'Windows API', 'Reverse Engineering', 'Direct3D', 'ImGui'] as tag}
-          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-zinc-600">{tag}</span>
+          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.05] border border-white/10 text-stone-300">{tag}</span>
         {/each}
 
       </div>
@@ -41,20 +41,20 @@
         href={REPO}
         target="_blank"
         rel="noreferrer"
-        class="glass glass-hover group inline-flex items-center gap-2.5 mt-8 rounded-xl px-4 py-2.5 text-sm text-zinc-700 hover:text-zinc-900"
+        class="glass glass-hover group inline-flex items-center gap-2.5 mt-8 rounded-xl px-4 py-2.5 text-sm text-stone-200 hover:text-stone-50"
       >
         <Icon name="github" size={16} />
         <span>View on GitHub</span>
-        <span class="text-zinc-400 group-hover:text-accent-soft transition-colors">
+        <span class="text-stone-500 group-hover:text-accent-soft transition-colors">
           <Icon name="external-link" size={12} />
         </span>
       </a>
     </header>
 
-    <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-700">
+    <div class="space-y-14 text-base leading-snug text-stone-200">
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overview</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Overview</h2>
         <p>
           Looking through some old folders on my computer I found an old cheat I wrote when I was 14 for the game
           Counter-Strike: Global Offensive. I repurposed its code and implemented a kernel driver to bypass anti-cheat.
@@ -69,13 +69,13 @@
           alt="Placeholder image for the CS2 external ESP writeup"
           class="glass rounded-xl w-full object-cover"
         />
-        <p class="text-sm text-zinc-500 mt-3">
+        <p class="text-sm text-stone-400 mt-3">
           How it looks in game
         </p>
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Anticheat Bypass</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Anticheat Bypass</h2>
         <p class="mb-6">
           Counter Strike uses VAC (Valve Anti Cheat) and it's well known for being pretty useless. 
           VAC is a usermode anticheat, meaning it doesn't have very high privileges and can't monitor in depth
@@ -97,7 +97,7 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Finding Offsets</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Finding Offsets</h2>
         <p>
           CS2 regularily updates the offsets for memory addresses of game objects. Luckily these are tracked 
           by dumps online, which we can pull from to get always updated offsets. I created a .bat script that 
@@ -108,7 +108,7 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overlay</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Overlay</h2>
         <p>
           The overlay is Imgui, which renders a transparent click-through window on top of the game and draws boxes
           using the players' feet and head positions for the box bounds. In order to prevent potential detection from
@@ -119,11 +119,11 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">What I Learned</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">What I Learned</h2>
         <p>
           Kernel development is very crash prone. I ran in to several freezes and even one Blue Screen of Death. Luckily,
           it was constrained to the virtual machine and didn't cause any real damage. 
-          The old code younger me wrote which I modified wasn'y that bad. However, it's still a very barebones cheat and I may 
+          The old code younger me wrote which I modified wasn't that bad. However, it's still a very barebones cheat and I may 
           expand on it in the future. Because of the kernel driver, it would be trivial to add more functionality as 
           well as write operations, since VAC would have no way to protect against its elevated privileges.
         </p>

@@ -25,14 +25,14 @@
     <!-- Hero -->
     <section class="pt-16 md:pt-24 pb-12 md:pb-16" transition:fade={{ duration: 800 }}>
 
-      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900" transition:fade={{ delay: 200, duration: 900 }}>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-stone-50" transition:fade={{ delay: 200, duration: 900 }}>
         Hello, I'm <span class="accent-glow">Alex</span>.
       </h1>
 
-      <div class="flex items-center gap-2 mt-5 text-lg md:text-2xl text-zinc-600" transition:fade={{ delay: 500, duration: 900 }}>
+      <div class="flex items-center gap-2 mt-5 text-lg md:text-2xl text-stone-300" transition:fade={{ delay: 500, duration: 900 }}>
         <span>I'm a</span>
         <div class="role-viewport">
-          <div class="role-track font-medium text-zinc-900">
+          <div class="role-track font-medium text-stone-50">
             <span>student</span>
             <span>reverse engineer</span>
             <span>software developer</span>
@@ -48,7 +48,7 @@
     <!-- About -->
     <section class="py-12 md:py-14">
       <h2 class="eyebrow mb-6">About</h2>
-      <div class="space-y-5 text-lg leading-relaxed text-zinc-700">
+      <div class="space-y-5 text-[1.05rem] leading-snug text-stone-200">
         <p>
           I'm a student and engineer who likes building impressive things that make an impact. I've never stepped down from a challenge and I set my goals high, because I want to see the things I make solve real problems for people.
         </p>
@@ -65,7 +65,7 @@
 
     <section class="pb-12 md:pb-14">
       <h2 class="eyebrow mb-6">Currently reading</h2>
-      <ul class="space-y-3 text-lg leading-relaxed text-zinc-700">
+      <ul class="space-y-3 text-[1.05rem] leading-snug text-stone-200">
         <li><i>Reverse-Engineering</i> - mytechnotalent</li>
         <li><i>The Theory of Moral Sentiments</i> - Adam Smith</li>
       </ul>

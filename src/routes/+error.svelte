@@ -27,17 +27,17 @@
 
     <p class="eyebrow mb-4">Error {status}</p>
 
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-stone-50">
       {heading}
     </h1>
 
-    <p class="mt-6 text-lg leading-relaxed text-zinc-600 max-w-xl">
+    <p class="mt-6 text-[1.05rem] leading-snug text-stone-300 max-w-xl">
       {blurb}
     </p>
 
     <a
       href="/"
-      class="inline-flex items-center gap-2 mt-10 text-sm text-zinc-600 hover:text-zinc-900 transition-colors self-start"
+      class="inline-flex items-center gap-2 mt-10 text-sm text-stone-300 hover:text-stone-50 transition-colors self-start"
     >
       <Icon name="arrow-left" size={14} />
       Back to home
@@ -49,8 +49,8 @@
       <div class="grid sm:grid-cols-2 gap-3">
         {#each suggestions as item}
           <a href={item.path} class="glass glass-hover group rounded-xl p-4 flex items-center justify-between gap-4">
-            <span class="text-sm text-zinc-900">{item.title}</span>
-            <span class="text-zinc-500 group-hover:text-accent-soft transition-colors">
+            <span class="text-sm text-stone-50">{item.title}</span>
+            <span class="text-stone-400 group-hover:text-accent-soft transition-colors">
               <Icon name="arrow-right" size={14} class="transition-transform duration-200 group-hover:translate-x-1" />
             </span>
           </a>

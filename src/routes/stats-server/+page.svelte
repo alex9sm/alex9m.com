@@ -28,19 +28,19 @@
 {#if visible}
   <article class="max-w-3xl mx-auto px-6 md:px-12 py-16 md:py-24" transition:fade={{ duration: 500 }}>
 
-    <a href="/#projects" class="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-12">
+    <a href="/#projects" class="inline-flex items-center gap-2 text-sm text-stone-300 hover:text-stone-50 transition-colors mb-12">
       <Icon name="arrow-left" size={14} />
       Back to projects
     </a>
 
     <header class="mb-14">
       <p class="eyebrow mb-4">August/2026</p>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-stone-50">
         Stats Server
       </h1>
       <div class="flex flex-wrap gap-2 mt-6">
         {#each ['C++', 'Linux', 'HTTP', 'Grafana', 'Proxmox'] as tag}
-          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-black/[0.03] border border-black/10 text-zinc-600">{tag}</span>
+          <span class="font-mono text-[0.65rem] px-2 py-1 rounded-md bg-white/[0.05] border border-white/10 text-stone-300">{tag}</span>
         {/each}
       </div>
 
@@ -48,20 +48,20 @@
         href={REPO}
         target="_blank"
         rel="noreferrer"
-        class="glass glass-hover group inline-flex items-center gap-2.5 mt-8 rounded-xl px-4 py-2.5 text-sm text-zinc-700 hover:text-zinc-900"
+        class="glass glass-hover group inline-flex items-center gap-2.5 mt-8 rounded-xl px-4 py-2.5 text-sm text-stone-200 hover:text-stone-50"
       >
         <Icon name="github" size={16} />
         <span>View on GitHub</span>
-        <span class="text-zinc-400 group-hover:text-accent-soft transition-colors">
+        <span class="text-stone-500 group-hover:text-accent-soft transition-colors">
           <Icon name="external-link" size={12} />
         </span>
       </a>
     </header>
 
-    <div class="space-y-14 text-[1.05rem] leading-relaxed text-zinc-700">
+    <div class="space-y-14 text-base leading-snug text-stone-200">
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Overview</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Overview</h2>
         <p>
           Stats server is a monitoring service for Proxmox VE nodes. For now it reads 24 metrics
           from the kernel every five seconds and keeps thirty days of history in memory. 
@@ -76,13 +76,13 @@
           alt="Grafana dashboard rendering CPU, memory, load, network, storage, and inode metrics served by stats-server"
           class="glass rounded-xl w-full object-cover"
         />
-        <p class="text-sm text-zinc-500 mt-3">
+        <p class="text-sm text-stone-400 mt-3">
           A Grafana dashboard reading from <code class="font-mono text-[0.85em]">/query_range</code>
         </p>
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Why I Built It</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Why I Built It</h2>
         <p>
           I wanted insights into my homelab nodes without installing all the usual monitoring
           services. I also didn't want a huge database taking up storage space, and mostly, I wanted a small 
@@ -93,7 +93,7 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Where do the Numbers Come From</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Where do the Numbers Come From</h2>
         <p class="mb-6">
           Every metric is read from the kernel files besides statvfs. Scrapers keep a file
           descriptor and reads back to the start on each tick with pread. They also copy all data to a shared buffer which 
@@ -106,8 +106,8 @@
             <li class="flex items-start gap-3">
               <span class="mt-2 h-1.5 w-1.5 rounded-full bg-accent-muted/70 shrink-0"></span>
               <span>
-                <code class="font-mono text-[0.9em] text-zinc-900">{source.path}</code>
-                <span class="text-zinc-600"> &mdash; {source.desc}</span>
+                <code class="font-mono text-[0.9em] text-stone-50">{source.path}</code>
+                <span class="text-stone-300"> &mdash; {source.desc}</span>
               </span>
             </li>
           {/each}
@@ -115,7 +115,7 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">Storage</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">Storage</h2>
         <p>
           Each tick structs are flattened into an array of floats and pushed into
           a ring buffer of 518,400 slots. This ring buffer stores 30 days of history in about 48MB. 
@@ -125,7 +125,7 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">The API</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">The API</h2>
         <p class="mb-6">
           The HTTP layer is a very simple cpp-httplib server with nlohmann json for
           serialization which means theres no need for a package manager. The server thread reads requests 
@@ -135,22 +135,22 @@
           <li class="flex items-start gap-3">
             <span class="mt-2 h-1.5 w-1.5 rounded-full bg-accent-muted/70 shrink-0"></span>
             <span>
-              <code class="font-mono text-[0.9em] text-zinc-900">GET /health</code>
-              <span class="text-zinc-600"> - health check</span>
+              <code class="font-mono text-[0.9em] text-stone-50">GET /health</code>
+              <span class="text-stone-300"> - health check</span>
             </span>
           </li>
           <li class="flex items-start gap-3">
             <span class="mt-2 h-1.5 w-1.5 rounded-full bg-accent-muted/70 shrink-0"></span>
             <span>
-              <code class="font-mono text-[0.9em] text-zinc-900">GET /query_range?from=&amp;to=&amp;step=</code>
-              <span class="text-zinc-600"> window of history. from start ms to end ms and downsampled to the step</span>
+              <code class="font-mono text-[0.9em] text-stone-50">GET /query_range?from=&amp;to=&amp;step=</code>
+              <span class="text-stone-300"> window of history. from start ms to end ms and downsampled to the step</span>
             </span>
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-4">What's Next</h2>
+        <h2 class="text-sm font-mono uppercase tracking-widest text-stone-400 mb-4">What's Next</h2>
         <p>
           Goal for now is to just add more metrics, probably temperature readings which will be difficult since 
           the sources will differ based on hardware. Also on my list is per LXC and VM metrics but I will have to 

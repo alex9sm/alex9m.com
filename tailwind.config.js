@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
-        mono: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+        sans: ['Noto Sans Mono', 'ui-monospace', 'monospace'],
+        mono: ['Noto Sans Mono', 'ui-monospace', 'monospace'],
       },
       colors: {
         accent: {
           DEFAULT: '#ef4444',
-          soft: '#dc2626',
+          soft: '#f87171',
           muted: '#ef4444',
         },
       },
